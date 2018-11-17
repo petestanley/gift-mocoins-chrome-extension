@@ -1,1 +1,1 @@
-# gift-mocoin-chrome-extension
+# gift-mocoins-chrome-extension
