@@ -17,7 +17,3 @@ chrome.runtime.onInstalled.addListener(function() {
     }]);
   });
 });
-
-//pageUrl: {hostEquals: 'ca.movember.com'}
-//"div[innertext='Select a payment method']"
-//css=div:contains("^ab$")
