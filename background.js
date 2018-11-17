@@ -11,9 +11,13 @@ chrome.runtime.onInstalled.addListener(function() {
   chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
     chrome.declarativeContent.onPageChanged.addRules([{
       conditions: [new chrome.declarativeContent.PageStateMatcher({
-        css: ["input[type='password']"],
+        pageUrl: {schemes: ['https']}
       })],
       actions: [new chrome.declarativeContent.ShowPageAction()]
     }]);
   });
 });
+
+//pageUrl: {hostEquals: 'ca.movember.com'}
+//"div[innertext='Select a payment method']"
+//css=div:contains("^ab$")
