@@ -1,7 +1,7 @@
 {
-  "name": "Getting Started Example",
+  "name": "Gift MoCoins",
   "version": "1.0",
-  "description": "Build an Extension!",
+  "description": "Collect MoCoins or donate to Movember Foundation",
   "permissions": ["activeTab", "declarativeContent", "storage"],
   "options_page": "options.html",
   "background": {
