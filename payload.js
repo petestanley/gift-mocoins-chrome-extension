@@ -1,6 +1,5 @@
 // send the page title as a chrome message
-// send the page title as a chrome message
-for (const tag of document.querySelectorAll("td")) {
+for (const tag of document.querySelector(".total")) {
   if (tag.textContent.includes("Total")) {
     var value = tag.nextElementSibling;
     console.log(tag.nextElementSibling);
@@ -8,4 +7,8 @@ for (const tag of document.querySelectorAll("td")) {
   }
 }
 
-//chrome.runtime.sendMessage(document.title);
+// Read total from Dollar Shave Club
+var paymentAmount = document.querySelector('.total .currency-units').textContent +
+    '.' +
+    document.querySelector('.total .currency-subunits').textContent;
+chrome.runtime.sendMessage(paymentAmount);

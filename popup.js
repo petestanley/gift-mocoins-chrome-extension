@@ -36,15 +36,14 @@ function myFunction() {
 }
 
 
-// Inject the payload.js script into the current tab after the popout has loaded
-window.addEventListener('load', function (evt) {
+// Inject the payload.js script into the current tab after the popup has loaded
+window.addEventListener('load', function () {
 	chrome.extension.getBackgroundPage().chrome.tabs.executeScript(null, {
 		file: 'payload.js'
-	});;
+	});
 });
 
 // Listen to messages from the payload.js script and write to popout.html
-chrome.runtime.onMessage.addListener(function (message) {
-	document.getElementById('pagetitle').innerHTML = message;
+chrome.runtime.onMessage.addListener((paymentAmount) => {
+	document.getElementById('pagetitle').innerText = paymentAmount;
 });
-
