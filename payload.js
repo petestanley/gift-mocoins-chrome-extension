@@ -1,11 +1,22 @@
+var currentUrl = window.location.href;
+
 function convertToMoCoins(amount) {
   var floatAmount = parseFloat(amount);
   var nearestDollar = Math.ceil(floatAmount);
   var mocoins = parseInt((nearestDollar - floatAmount)*100);
-  return mocoins === 0 ? 100 : mocoins;
+  mocoins = mocoins === 0 ? 100 : mocoins;
+  chrome.storage.sync.get('lastVisited', (data) => {
+      if (data.lastVisited && data.lastVisited !== currentUrl) {
+          chrome.storage.sync.get('balance', (data) => {
+              var updateAmount = data.balance ? data.balance : 0;
+              updateAmount += mocoins;
+              chrome.storage.sync.set({balance: updateAmount, lastVisited: currentUrl}, function() {
+                  console.log('amount stored:', updateAmount);
+              });
+          });
+      }
+  });
 }
-
-var currentUrl = window.location.href;
 
 if (currentUrl.includes('amazon')) {
     // Read total from Amazon
