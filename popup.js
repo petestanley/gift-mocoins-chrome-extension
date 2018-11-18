@@ -19,7 +19,7 @@ redeemMoCoins.onclick = function openLandingPage(element) {
   chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
     chrome.tabs.executeScript(
         tabs[0].id,
-        {code: 'window.open("http://movember.webflow.io/");'});
+        {code: 'window.open("https://kayalash.github.io/");'});
   });
 };
 
@@ -30,7 +30,7 @@ donateLink.onclick = function openLandingPage(element) {
   chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
     chrome.tabs.executeScript(
         tabs[0].id,
-        {code: 'window.open("https://ca.movember.com/get-involved/donate");'});
+        {code: 'window.open("http://movember.webflow.io/");'});
   });
 };
 
