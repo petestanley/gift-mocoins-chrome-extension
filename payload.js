@@ -12,7 +12,6 @@ function storeMoCoins(mocoins) {
           });
       }
   });
-
 }
 
 function convertToMoCoins(amount) {
