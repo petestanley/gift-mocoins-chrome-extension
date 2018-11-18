@@ -1,14 +1,14 @@
 'use strict';
 
-const movemberFacts = [
+var movemberFacts = [
     "1 in 7 men will be diagnosed with prostate cancer. 1 in 8 women will be diagnosed with breast cancer.",
     "Over 6 million men are diagnosed with depression each year.",
     "A new case of prostate cancer is diagnosed every 2.2 minutes.",
     "70% of men either never have or don’t regularly check their nuts.",
     "The Movember Foundation focuses on three areas that we know need the most work: Prostate Cancer, Testicular Cancer and Mental health.",
     "Testicular cancer rates have doubled over the last 50 years.",
-    "If you catch prostate cancer early - when the cancer is still isolated just to the prostate - there is a 98% chance of survival (98%!!!).",
-    "For Canadian men between the ages of 15-44, suicide is the leading cause of death. Globally, a man dies by suicide every minute."
+    "If you catch prostate cancer early - when the cancer is still isolated just to the prostate - there is a 98% chance of survival.",
+    "For Canadian men between the ages of 15-44, suicide is the leading cause of death."
 ];
 
 
