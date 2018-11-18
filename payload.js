@@ -39,6 +39,8 @@ if (currentUrl.includes('amazon')) {
 
 chrome.storage.sync.get('balance', (data) => {
     if (data.balance) {
+        document.getElementById('earned-mocoins').innerText = String(data.balance) + " Mo' Coins";
+        document.getElementById('donate-link').innerText = "Feel like giving back? Donate " + data.balance + " cents";
         document.getElementById('total-mocoins').innerText = String(data.balance) + " Mo' Coins";
         document.getElementById('redeem-mocoins').innerText = "Redeem Now";
     }

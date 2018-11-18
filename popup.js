@@ -26,6 +26,8 @@ donateLink.onclick = function openLandingPage(element) {
 window.addEventListener('load', function () {
     chrome.storage.sync.get('balance', (data) => {
         if (data.balance) {
+            document.getElementById('earned-mocoins').innerText = String(data.balance) + " Mo' Coins";
+            document.getElementById('donate-link').innerText = "Feel like giving back? Donate " + data.balance + " cents";
             document.getElementById('total-mocoins').innerText = String(data.balance) + " Mo' Coins";
         }
     });
@@ -36,8 +38,10 @@ window.addEventListener('load', function () {
 
 // Listen to messages from the payload.js script and write to popup.html
 chrome.runtime.onMessage.addListener((paymentAmount) => {
+    document.getElementById('content-1').innerText = "Thanks for making a purchase with one of Movember Foundation's proud partners!";
+    document.getElementById('content-2').innerText = "You just earned:"
 	document.getElementById('earned-mocoins').innerText = paymentAmount + " Mo' Coins";
-	document.getElementById('donate-link').innerText = "Feel like giving back? Donate " + paymentAmount/100 + " cents";
+	document.getElementById('donate-link').innerText = "Feel like giving back? Donate " + paymentAmount + " cents";
 	chrome.storage.sync.get('balance', (data) => {
         document.getElementById('total-mocoins').innerText = String(data.balance) + " Mo' Coins";
         document.getElementById('redeem-mocoins').innerText = "Redeem Now";
