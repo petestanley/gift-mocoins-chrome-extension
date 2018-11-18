@@ -45,5 +45,5 @@ window.addEventListener('load', function () {
 
 // Listen to messages from the payload.js script and write to popout.html
 chrome.runtime.onMessage.addListener((paymentAmount) => {
-	document.getElementById('pagetitle').innerText = paymentAmount;
+	document.getElementById('mocoins').innerText = paymentAmount;
 });

@@ -1,4 +1,11 @@
+function convertToMoCoins(amount) {
+  var floatAmount = parseFloat(amount);
+  var nearestDollar = Math.ceil(floatAmount);
+  return parseInt((nearestDollar - floatAmount)*100);
+}
+
 var currentUrl = window.location.href;
+
 if (currentUrl.includes('amazon')) {
     // Read total from Amazon
     for (const tag of document.querySelectorAll("td")) {
@@ -8,14 +15,16 @@ if (currentUrl.includes('amazon')) {
         var value_content = value.textContent;
         var total = parseFloat(value_content.substring(5,value_content.length));
         var nearest_dol = Math.ceil(total);
-        chrome.runtime.sendMessage(parseInt((nearest_dol - total) * 100));
+        let paymentAmount = parseInt((nearest_dol - total) * 100);
       }
     }
 } else if(currentUrl.includes('dollarshaveclub')){
     // Read total from Dollar Shave Club
-    var paymentAmount = document.querySelector('.total .currency-units').textContent +
+    let paymentAmount = document.querySelector('.total .currency-units').textContent +
         '.' +
         document.querySelector('.total .currency-subunits').textContent;
-    chrome.runtime.sendMessage(paymentAmount);
+    paymentAmount = convertToMoCoins(paymentAmount);
+
 }
 
+chrome.runtime.sendMessage(paymentAmount);
