@@ -18,15 +18,17 @@ chrome.storage.sync.get('balance', (data) => {
     if (data.balance >= 100) {
         document.body.innerHTML += `
             <dialog class="dialog__window">
+                <link href="https://fonts.googleapis.com/css?family=Overpass" rel="stylesheet">
+                <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
                 <p id='close-button-wrapper'>
-                <button id="close-button" class="popup-button popup-button-raised">Close</button>
+                <button id="close-button" class="popup-button popup-button-raised" style="font-family: 'Overpass', sans-serif;">Close</button>
                 </p>
                 <img src="https://1zbuhu1t3cn216t5533fsizp-wpengine.netdna-ssl.com/wp-content/uploads/2018/10/MOV_FOUND_Proud-Partner_Horizontal_Black_RGB-740x232.jpg">
-                <p class="dialog__content-text">Movember Foundation is the leading charity changing the face of men’s health.</p>
-                <h1 class="dialog__content-title">Did you know?</h1>
-                <p class="dialog__content-text">${showFact} Donate today to have an everlasting impact on the face of men’s health.</p>
+                <p class="dialog__content-text" style="font-family: 'Overpass', sans-serif;">Movember Foundation is the leading charity changing the face of men’s health.</p>
+                <h1 class="dialog__content-title" style="font-family: 'Overpass', sans-serif;">Did you know?</h1>
+                <p class="dialog__content-text" style="font-family: 'Overpass', sans-serif;">${showFact} Donate today to have an everlasting impact on the face of men\'s health.</p>
                 <p id="redeem-button">
-                    <button id="redeem-donate" class="redeem-donate-button popup-button popup-button-raised">Donate / Redeem</button>
+                    <button id="redeem-donate" class="redeem-donate-button popup-button popup-button-raised" style="font-family: 'Overpass', sans-serif;">Donate / Redeem</button>
                 </p>
             </dialog>
         `;
