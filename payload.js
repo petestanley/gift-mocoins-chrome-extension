@@ -1,7 +1,8 @@
 function convertToMoCoins(amount) {
   var floatAmount = parseFloat(amount);
   var nearestDollar = Math.ceil(floatAmount);
-  return parseInt((nearestDollar - floatAmount)*100);
+  var mocoins = parseInt((nearestDollar - floatAmount)*100);
+  return mocoins === 0 ? 100 : mocoins;
 }
 
 var currentUrl = window.location.href;
@@ -15,7 +16,7 @@ if (currentUrl.includes('amazon')) {
 
 else if(currentUrl.includes('dollarshaveclub')) {
     // Read total from Dollar Shave Club
-    let paymentAmount = document.querySelector('.total .currency-units').textContent +
+    var paymentAmount = document.querySelector('.total .currency-units').textContent +
         '.' +
         document.querySelector('.total .currency-subunits').textContent;
     paymentAmount = convertToMoCoins(paymentAmount);
