@@ -1,19 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link href="https://fonts.googleapis.com/css?family=Anton|Overpass" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 <section class="main">
     <div class="header" id="header">
         <img class="header__image" src="/images/header-movember-foundation.jpg">
-        <h1 class="header__title">Gift Mo' Coins</h1>
+        <h1 class="header__title">Earn Mo' Coins</h1>
     </div>
     <div class="content">
-        <h1 id="mocoins">Mocoins here</h1>
-        <p>Thanks for making a purchase with one of Movember Foundation's proud partners.</p>
+        <p>Thanks for making a purchase with one of Movember Foundation's proud partners!</p>
+        <p class="content__center">You just earned:</p>
+        <div class="content__earned" id="earned-mocoins">0 Mo'Coins</div>
+        <img class="content__mocoin-image" src="/images/mocoin.png">
+        <p>Head over to your Mo Space to check your balance and redeem your points for some Mo' Goodies!</p>
     </div>
-    <!--<button id="changeColor"></button>-->
+    <div class="footer">
+        <img class="user-image" src="/images/user-profile.png">
+        <div class="user-info">
+            <span class="user-name">Brianna Leung</span>
+            <span class="user-total" id="total-mocoins">0 Mo'Coins</span>
+        </div>
+        <button class="redeem-button redeem-button-raised" id="redeemMoCoins">Redeem Now</button>
+    </div>
 </section>
 
 <script src="popup.js"></script>
