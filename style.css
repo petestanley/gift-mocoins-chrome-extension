@@ -92,6 +92,10 @@ button {
     right: 16px;
 }
 
+.close-button {
+    position: fixed;
+}
+
 .popup-button {
     background-image: linear-gradient(#00ADA8, #1AC7C2);
     background-color: #00ADA8;
@@ -164,7 +168,10 @@ button {
     flex-direction: row;
 }
 
-.redeem-donate-button {
-    padding-left: 200px;
+#redeem-button {
+    text-align: center;
+}
 
+#close-button-wrapper {
+    text-align: right;
 }
