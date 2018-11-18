@@ -1,5 +1,17 @@
 'use strict';
 
+const movemberFacts = [
+    "1 in 7 men will be diagnosed with prostate cancer. 1 in 8 women will be diagnosed with breast cancer.",
+    "Over 6 million men are diagnosed with depression each year.",
+    "A new case of prostate cancer is diagnosed every 2.2 minutes.",
+    "70% of men either never have or don’t regularly check their nuts.",
+    "The Movember Foundation has always been holistically men’s health, but we focus on three areas that we know need the most work: Prostate Cancer, Testicular Cancer and Mental health - focused on suicide prevention",
+    "Testicular cancer rates have doubled over the last 50 years.",
+    "If you catch prostate cancer early - when the cancer is still isolated just to the prostate - there is a 98% chance of survival (98%!!!).",
+    "For Canadian men between the ages of 15-44, suicide is the leading cause of death. Globally, a man dies by suicide every minute."
+];
+
+
 // On click of redeem button, redirect to landing page
 let redeemMoCoins = document.getElementById('redeem-mocoins');
 redeemMoCoins.onclick = function openLandingPage(element) {
@@ -26,7 +38,9 @@ donateLink.onclick = function openLandingPage(element) {
 window.addEventListener('load', function () {
     chrome.storage.sync.get('balance', (data) => {
         if (data.balance) {
-            document.getElementById('earned-mocoins').innerText = String(data.balance) + " Mo' Coins";
+            var showFact = movemberFacts[Math.floor(Math.random() * Math.floor(8))];
+            document.getElementById('content-1').innerText = `${showFact} Donate today to have an everlasting impact on the face of men’s health.`;
+            document.getElementById('earned-mocoins').innerText = data.balance ? String(data.balance) + " Mo' Coins" : "0 Mo' Coins";;
             document.getElementById('donate-link').innerText = "Feel like giving back? Donate " + data.balance + " cents";
             document.getElementById('total-mocoins').innerText = String(data.balance) + " Mo' Coins";
         }
